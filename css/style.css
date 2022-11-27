@@ -1,0 +1,143 @@
+body{
+    margin: 0px auto;
+    padding: 0px;
+    background-color: #2F3640;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Calibri";
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper > p{
+    font-size: 32px;
+    font-weight: bold;
+    color: #40739E;
+    text-transform: uppercase;
+    border: 2px solid #40739E;
+    margin-bottom: 128px;
+    padding: 10px 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-left: 128px;
+    overflow: hidden;
+}
+
+.square::after{
+    content: "";
+    position: absolute;
+    background: conic-gradient(transparent, transparent, transparent, #96FF00);
+    width: 300px;
+    height: 300px;
+    animation-name: animRotateUp;
+    animation-duration: 4s;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.square::before{
+    content: "";
+    position: absolute;
+    background: conic-gradient(transparent, transparent, transparent, #00B7EB);
+    width: 300px;
+    height: 300px;
+    animation-name: animRotateUp;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.square > span{
+    position: absolute;
+    background-color: #000000;
+    inset: 5px;
+    z-index: 1;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle::after{
+    content: "";
+    position: absolute;
+    background: conic-gradient(transparent, transparent, transparent, #B10304);
+    width: 300px;
+    height: 300px;
+    animation-name: animRotateDown;
+    animation-duration: 4s;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    background: conic-gradient(transparent, transparent, transparent, #FFE302);
+    width: 300px;
+    height: 300px;
+    animation-name: animRotateDown;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.circle > span{
+    position: absolute;
+    background-color: #000000;
+    border-radius: 50%;
+    inset: 5px;
+    z-index: 1;
+}
+
+@keyframes animRotateUp{
+    from{
+        transform: rotate(0deg);
+    }   
+    to{
+        transform: rotate(360deg);
+    } 
+}
+
+@keyframes animRotateDown{
+    from{
+        transform: rotate(360deg);
+    }   
+    to{
+        transform: rotate(0deg);
+    } 
+}
